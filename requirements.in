@@ -1,0 +1,10 @@
+django
+django-environ
+django-dotenv
+whitenoise
+gunicorn
+freezegun
+ipython
+pillow
+psycopg2-binary
+
