@@ -1,6 +1,12 @@
 # Controle simples de inventário
 
+Sistema para controle de entradas e saídas de mercadorias.
+
 Criado com Django, Bootstrap 5 e HTMX.
+
+### Utiliza
+- pre-commit integrado com black, isort e flake8 para estilo, formatação e lint.
+- django-environ para controle de variáveis de ambiente.
 
 # Instalação
 
