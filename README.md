@@ -3,6 +3,7 @@
 Sistema para controle de entradas e saídas de mercadorias.
 
 Criado com Django, Bootstrap 5 e HTMX.
+Deploy na Oracle Cloud usando Terraform e Docker.
 
 ### Utiliza
 - pre-commit integrado com black, isort e flake8 para estilo, formatação e lint.
