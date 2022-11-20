@@ -5,3 +5,4 @@ freezegun
 ipython
 pillow
 psycopg2-binary
+django-admin-interface
