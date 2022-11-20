@@ -2,12 +2,17 @@
 
 Sistema para controle de entradas e saídas de mercadorias.
 
-Criado com Django, Bootstrap 5 e HTMX.
+Criado com Django, Bootstrap 4 e HTMX.
 Deploy na Oracle Cloud usando Terraform e Docker.
 
 ### Utiliza
-- pre-commit integrado com black, isort e flake8 para estilo, formatação e lint.
-- django-environ para controle de variáveis de ambiente.
+- `pre-commit` integrado com black, isort e flake8 para estilização, formatação e linting.
+- `django-environ` para controle de variáveis de ambiente.
+- `django-admin-interface` para customização da área administrativa (Django admin/CMS).
+- `pip-tools` para gerenciamento de dependências.
+- [Corona free admin template](https://github.com/BootstrapDash/corona-free-dark-bootstrap-admin-template) como template.
+- Modelo de usuário customizado.
+- [HTMX](https://htmx.org/).
 
 # Instalação
 

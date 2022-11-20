@@ -38,14 +38,17 @@ ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 # Application definition
 
 INSTALLED_APPS = [
+    # third party
     "admin_interface",
     "colorfield",
+    # django
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # apps
     "autenticacao",
     "inventario",
 ]
@@ -91,7 +94,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -111,6 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Custom User
+# https://docs.djangoproject.com/en/1.11/topics/auth/customizing/#auth-custom-user
+
 AUTH_USER_MODEL = "autenticacao.CustomUser"
 
 # Internationalization
