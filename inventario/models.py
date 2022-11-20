@@ -25,19 +25,8 @@ class Marca(models.Model):
         return self.nome
 
 
-class Pais(models.Model):
-
-    nome = models.CharField(verbose_name="país de origem", max_length=255, blank=False, null=False, unique=True)
-
-    class Meta:
-        verbose_name = "país"
-        verbose_name_plural = "países"
-
-    def __str__(self) -> str:
-        return self.nome
-
-
 class TipoVariacao(models.Model):
+    """Ex: Cor, Tamanho"""
 
     nome = models.CharField(verbose_name="tipo de variação", max_length=255, blank=False, null=False, unique=True)
 
@@ -50,11 +39,12 @@ class TipoVariacao(models.Model):
 
 
 class Variacao(models.Model):
+    """Ex: Amarelo, Vermelho | P, M, G"""
 
     tipo_variacao = models.ForeignKey(
         TipoVariacao,
         verbose_name="tipo de variação",
-        related_name="conteudos",
+        related_name="variacoes",
         on_delete=models.PROTECT,
     )
 
@@ -75,7 +65,7 @@ class Produto(models.Model):
         OUTONO = "outono", "Outono"
         INVERNO = "inverno", "Inverno"
 
-    categoria = models.ManyToManyField(
+    categorias = models.ManyToManyField(
         Categoria,
         verbose_name="categoria",
         related_name="produtos",
@@ -84,13 +74,6 @@ class Produto(models.Model):
     marca = models.ForeignKey(
         Marca,
         verbose_name="marca",
-        related_name="produtos",
-        on_delete=models.PROTECT,
-    )
-
-    pais = models.ForeignKey(
-        Pais,
-        verbose_name="país",
         related_name="produtos",
         on_delete=models.PROTECT,
     )
@@ -111,13 +94,13 @@ class Grade(models.Model):
     produto = models.ForeignKey(
         Produto,
         verbose_name="produto",
-        related_name="grade",
+        related_name="grades",
         on_delete=models.PROTECT,
     )
     variacoes = models.ManyToManyField(
         Variacao,
         verbose_name="variações",
-        related_name="grade",
+        related_name="grades",
     )
     saldo = models.PositiveIntegerField(verbose_name="saldo", blank=True, null=True, default=0)
     custo = models.FloatField(verbose_name="valor de custo", blank=True, null=True, default=0)
@@ -126,3 +109,10 @@ class Grade(models.Model):
     desconto = models.FloatField(verbose_name="taxa de desconto", default=0)
     sku = models.CharField(verbose_name="sku", max_length=255, blank=True, null=True, unique=True)
     gtin = models.CharField(verbose_name="gtin", max_length=255, blank=True, null=True)
+
+    class Meta:
+        verbose_name = "grade"
+        verbose_name_plural = "grades"
+
+    def __str__(self) -> str:
+        return self.produto.descricao
