@@ -22,9 +22,12 @@ from django.urls import (
 )
 from django.views.generic import RedirectView
 
+from autenticacao.views import LoginCustomUser
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/login", LoginCustomUser.as_view(), name="login"),
     path("inventario/", include("inventario.urls")),
     # redireciona de "/" para "inventario/"
     path("", RedirectView.as_view(url="inventario/", permanent=True)),

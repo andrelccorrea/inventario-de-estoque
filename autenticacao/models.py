@@ -42,7 +42,8 @@ class UserManager(BaseUserManager):
 class CustomUser(AbstractUser):
 
     username = None
-    email = models.EmailField("e-mail", unique=True)
+    email = models.EmailField(verbose_name="e-mail", unique=True)
+    remember = models.BooleanField(verbose_name="lembrar-me", default=True)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
