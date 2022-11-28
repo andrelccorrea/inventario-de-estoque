@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # apps
     "autenticacao",
     "inventario",
+    "core",
 ]
 
 MIDDLEWARE = [

@@ -28,9 +28,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/login", LoginCustomUser.as_view(), name="login"),
-    path("inventario/", include("inventario.urls")),
+    path("inicio/", include("core.urls")),
     # redireciona de "/" para "inventario/"
-    path("", RedirectView.as_view(url="inventario/", permanent=True)),
+    path("", RedirectView.as_view(url="inicio/", permanent=True)),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
