@@ -15,7 +15,3 @@ class LoginCustomUser(LoginView):
         user.remember = lembrar
         user.save(update_fields=["remember"])
         return super().form_valid(form)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["configuracoes"]

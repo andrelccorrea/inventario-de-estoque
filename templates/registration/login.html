@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Corona Admin</title>
+  <title>{{ configuracoes.fantasia }}</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'assets/vendors/mdi/css/materialdesignicons.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/vendors/css/vendor.bundle.base.css' %}">
@@ -45,7 +45,9 @@
                 <div class="form-group d-flex align-items-center justify-content-between">
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input name="{{ form.remember.name }}" type="checkbox" class="form-check-input"> Lembrar-me </label>
+                      <input name="{{ form.remember.name }}" type="checkbox" checked class="form-check-input">
+                      Lembrar-me
+                    </label>
                   </div>
                 </div>
                 <div class="text-center">

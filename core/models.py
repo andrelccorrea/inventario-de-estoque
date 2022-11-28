@@ -6,6 +6,11 @@ class ConfiguracoesGerais(models.Model):
 
     # TODO: Adicionar validações para os campos abaixo
 
+    # TODO: tratar as imagens (logo, logo_mini e banner)
+    # Redimensionar cada uma para o tamanho correto
+    # Deletar as antigas ao fazer novo upload
+    # Renomear as novas para logo, logo_mini e banner, mantendo a extensão do arquivo
+
     fantasia = models.CharField(verbose_name="fantasia", max_length=255, blank=True, null=True)
     razao_social = models.CharField(verbose_name="razão social", max_length=255, blank=True, null=True)
     cpf = models.CharField(verbose_name="cpf", max_length=11, blank=True, null=True)
@@ -19,6 +24,7 @@ class ConfiguracoesGerais(models.Model):
     cidade = models.CharField(verbose_name="cidade", max_length=255, blank=True, null=True)
     cep = models.CharField(verbose_name="cep", max_length=8, blank=True, null=True)
     logo = models.ImageField(verbose_name="logo", blank=True, null=True)
+    logo_mini = models.ImageField(verbose_name="logo mini", blank=True, null=True)
     banner = models.ImageField(verbose_name="banner", blank=True, null=True)
 
     class Meta:
